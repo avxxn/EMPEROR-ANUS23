@@ -354,7 +354,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
 	    delete this.suit[roof.id]
 	    return !0
 	    }
-	    roof.status = 'play'
+	    roof.status = 'لعب'
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
@@ -447,7 +447,7 @@ Selama ${clockString(new Date - user.afkTime)}
                 m.reply(`${m.pushName} Telah Afk${text ? ': ' + text : ''}`)
             }
             break	
-        case 'ttc': case 'ttt': case 'tictactoe': {
+        case 'ttc': case 'ttt': case 'تك توك': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
@@ -497,7 +497,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             }
             break
-            case 'delttc': case 'delttt': {
+            case 'delttc': case 'مشترك': {
             this.game = this.game ? this.game : {}
             try {
             if (this.game) {
@@ -511,7 +511,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             }
             break
-            case 'suitpvp': case 'suit': {
+            case 'دعوه': case 'suit': {
             this.suit = this.suit ? this.suit : {}
             let poin = 10
             let poin_lose = 10
@@ -547,7 +547,7 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
                 m.reply('Script : https://github.com/DikaArdnt/Hisoka-Morou\n\n Dont Forget Give Star\n\nDonate : 6281615075793 (Link Aja)\nSaweria : https://saweria.co/DikaArdnt\nPaypal : https://www.paypal.me/Cakhaho\n\n Dont Forget Donate')
             }
             break
-            case 'chat': {
+            case 'دردشة': {
                 if (!isCreator) throw mess.owner
                 if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
                 if (args[0] === 'mute') {
@@ -1005,7 +1005,7 @@ teks_vote = `*「 VOTE 」*
 
 ┌〔 UPVOTE 〕
 │ 
-├ Total: ${upvote.length}
+├ المجموعه: ${upvote.length}
 ${vote[m.chat][1].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
 │ 
 └────
@@ -1146,13 +1146,13 @@ break
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Source Code',
-                                    url: 'https://github.com/DikaArdnt/Hisoka-Morou'
+                                    displayText: 'الدعم',
+                                    url: 'https://chat.whatsapp.com/JUngwIYTMVzCxMuismJuOY'
                                 }
                             }, {
                                 callButton: {
-                                    displayText: 'Number Phone Owner',
-                                    phoneNumber: '+62 882-9202-4190'
+                                    displayText: 'مطور,
+                                    phoneNumber: '+967771160204 '
                                 }
                             }, {
                                 quickReplyButton: {
@@ -1161,8 +1161,8 @@ break
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Contact Owner',
-                                    id: 'owner'
+                                    displayText: 'مطور البوت ',
+                                    id: 'انوس'
                                 }  
                             }, {
                                 quickReplyButton: {
@@ -1316,7 +1316,8 @@ break
 	    break
 	       case 'attp': case 'ttp': {
            if (!text) throw `Example : ${prefix + command} text`
-           await hisoka.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
+           await hisoka.sendMedia(m.chat, `https://xteam.xyz/${command}?file&text=${text}`, 'hisoka', 'morou', m, {asSticker: true})
+
          }
          break
 	       case 'smeme': case 'stickmeme': case 'stikmeme': case 'stickermeme': case 'stikermeme': {
@@ -1422,7 +1423,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'imagenobg': case 'removebg': case 'remove-bg': {
+            case 'تخيل': case 'removebg': case 'remove-bg': {
 	    if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 	    if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
 	    if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
@@ -1459,21 +1460,21 @@ break
                 hisoka.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
             break
-        case 'google': {
+        case 'غوغل': {
                 if (!text) throw `Example : ${prefix + command} fatih arridho`
                 let google = require('google-it')
                 google({'query': text}).then(res => {
                 let teks = `Google Search From : ${text}\n\n`
                 for (let g of res) {
-                teks += `⭔ *Title* : ${g.title}\n`
-                teks += `⭔ *Description* : ${g.snippet}\n`
-                teks += `⭔ *Link* : ${g.link}\n\n────────────────────────\n\n`
+                teks += `⭔ *عنوان* : ${g.title}\n`
+                teks += `⭔ *وصف* : ${g.snippet}\n`
+                teks += `⭔ *🔚 نهاية* : ${g.link}\n\n────────────────────────\n\n`
                 } 
                 m.reply(teks)
                 })
                 }
                 break
-        case 'gimage': {
+        case 'صورة': {
         if (!text) throw `Example : ${prefix + command} kaori cicak`
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
@@ -1485,7 +1486,7 @@ break
                 let buttonMessage = {
                     image: { url: images },
                     caption: `*-------「 GIMAGE SEARCH 」-------*
-🤠 *Query* : ${text}
+🤠 *استفسار* : ${text}
 🔗 *Media Url* : ${images}`,
                     footer: hisoka.user.name,
                     buttons: buttons,
@@ -2724,18 +2725,18 @@ let capt = `⭔ Title: ${judul}
                 }
             }
             break
-            case 'list': case 'menu': case 'help': case '?': {
+            case 'list': case 'menu': case 'الاوامر': case '?': {
                 anu = `┌──⭓ *Group Menu*
 │
-│⭔ ${prefix}linkgroup
-│⭔ ${prefix}ephemeral [option]
+│⭔ ${prefix}linkgroup لينكجروب
+│⭔ ${prefix}ephemeralسريع الزوال [option]
 │⭔ ${prefix}setppgc [image]
 │⭔ ${prefix}setname [text]
 │⭔ ${prefix}setdesc [text]
 │⭔ ${prefix}group [option]
 │⭔ ${prefix}editinfo [option]
-│⭔ ${prefix}add @user
-│⭔ ${prefix}kick @user
+│⭔ ${prefix}add إضافة @user
+│⭔ ${prefix}kick طرد@user
 │⭔ ${prefix}hidetag [text]
 │⭔ ${prefix}tagall [text]
 │⭔ ${prefix}antilink [on/off]
